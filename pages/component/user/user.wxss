@@ -1,1 +1,13 @@
 /* pages/component/user/user.wxss */
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 320px;
+}
+.user {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width:fit-content;
+}
