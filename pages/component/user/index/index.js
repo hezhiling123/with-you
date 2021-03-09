@@ -56,6 +56,7 @@ Page({
     }
   },
 
+    
   getUserInfo(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -63,6 +64,32 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  
+  getLogin() {
+    if (!app.globalData.isLogin) {
+      wx.navigateTo({
+        url: '/pages/component/auth/login'
+      });
+    }
+  },
+
+  exitLogin: function() {
+    wx.showModal({
+      title: '',
+      confirmColor: '#b4282d',
+      content: '退出登录？',
+      success: function(res) {
+        if (res.confirm) {
+          wx.removeStorageSync('token');
+          wx.removeStorageSync('userInfo');
+          wx.switchTab({
+            url: '/pages/index/index'
+          });
+        }
+      }
+    })
+
   },
 
   /**

@@ -33,7 +33,14 @@ App({
       }
     })
   },
+  onShow: function(options) {
+    user.checkLogin().then(res => {
+      this.globalData.hasLogin = true;
+    }).catch(() => {
+      this.globalData.hasLogin = false;
+    });
+  },
   globalData: {
-    userInfo: null
+    hasLogin: false
   }
 })
