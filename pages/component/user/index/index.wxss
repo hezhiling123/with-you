@@ -1,13 +1,177 @@
-/* pages/component/user/user.wxss */
-.main {
-  display: flex;
-  flex-direction: column;
-  height: 600px;
-  width: 320px;
+@import '../../../common/common.wxss';
+
+.userInfo {
+    padding-left: 23rpx;
+    padding-top: 70rpx;
+    display: flex;
+    flex-direction: column;
+    height: 300rpx;
+    width: 750rpx;
+    background-color: yellow;
 }
-.user {
-  display: flex;
-  flex-direction: row;
-  height: 200px;
-  width:fit-content;
+
+.userBasic {
+    height: 130rpx;
+    width:  726rpx;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.userinfo-avatar {
+    height: 130rpx;
+    width: 130rpx;
+    border-radius: 130rpx;
+}
+
+.userinfo-nickname {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    height: 100rpx;
+    width: 500rpx;
+    background-color: red;
+    font: 50rpx bold;
+}
+
+.vipCenter {
+    margin-top: 90rpx;
+    padding-top: 25rpx;
+    padding-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    width: 680rpx;
+    background: #000000;
+    border-top-left-radius: 20rpx;
+    border-top-right-radius: 20rpx;
+}
+
+.vipIcon {
+    margin-top: -10rpx;
+    height: 60rpx;
+    width: 60rpx;
+}
+
+#becomeVipText #toRegister{
+    height: 30rpx;
+    font-size: 20rpx;
+    background-color: white;
+}
+
+#becomeVipText {
+    color: yellow;
+}
+
+#toRegister {
+    margin-left: 50rpx;
+    color: #ffffff;
+}
+
+#toRegisterImage {
+    height: 45rpx;
+    width: 45rpx;
+}
+
+#userRouterList {
+    padding-left: 23rpx;
+    padding-top: 20rpx;
+    height: 1000rpx;
+    width: 750rpx;
+    background-color: #f8f1f1;
+}
+
+.common-router-block {
+    margin-top: 15rpx;
+    height: 280rpx;
+    width: 700rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20rpx;
+}
+
+#myOrder {
+    height: 280rpx;
+}
+
+#allOrder {
+    padding-top: 30rpx;
+    height: 60rpx;
+    width: 700rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+#allOrder-text {
+    padding-left: 35rpx;
+    height: 50rpx;
+    width: 500rpx;
+    font: 32rpx bolder;
+    line-height: 30rpx;
+}
+
+#allOrder-seeAll {
+    margin-left: 100rpx;
+    padding-top: 10rpx;
+    line-height: 20rpx;
+    height: 30rpx;
+    width: 270rpx;
+    color: #c5c7c1;
+    font-size: 27rpx;
+}
+
+.common-right-arrow {
+    margin-top: -10rpx;
+    margin-right: 40rpx;
+    display: right;
+    height: 60rpx;
+    width: 60rpx;
+}
+
+#allOrder-divLine {
+    margin-left:40rpx;
+    height: 2rpx;
+    width: 620rpx;
+    background-color: #E0E3DA;
+}
+
+.serviceList {
+    padding-top: 40rpx;
+    padding-left: 20rpx;
+    height: 400rpx;
+    width: 680rpx;
+    display: flex;
+    flex-direction: row;
+}
+
+.serviceBlock {
+    height: 130rpx;
+    width: 130rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.serviceIcon {
+    padding-left: 30rpx;
+    padding-bottom: 10rpx;
+    height: 70rpx;
+    width: 70rpx;
+}
+
+.serviceDescribe {
+    height: 30rpx;
+    text-align: center;
+    font-size: 25rpx;
+    width: 120rpx;
+    letter-spacing: 2rpx;
+}
+
+#goods-block {
+    margin-top: 100rpx;
+    height: 100rpx;
+    background-color: yellow;
+}
+
+.user-motto {
+    font-size: 60rpx;
 }

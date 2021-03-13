@@ -1,8 +1,0 @@
-<!--pages/component/user/index.wxml-->
-<view class="container">
-  <view class="userInfo">
-    <image class="avatar" src="{{userInfo.avatarurl}}"/>
-    <view class="nickname">{{userInfo.nickNmae}}</view>
-    <text></text>
-  </view>
-</view>

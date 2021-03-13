@@ -1,4 +1,5 @@
 // app.js
+import user from './utils/user.js';
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -8,7 +9,7 @@ App({
 
     // 登录
     wx.login({
-      success: res => {
+      success: () => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
@@ -33,14 +34,15 @@ App({
       }
     })
   },
-  onShow: function(options) {
-    user.checkLogin().then(res => {
+  onShow: function() {
+    user.checkLogin().then(() => {
       this.globalData.hasLogin = true;
     }).catch(() => {
       this.globalData.hasLogin = false;
     });
   },
   globalData: {
+    userInfo: null,
     hasLogin: false
   }
 })

@@ -1,6 +1,6 @@
-var api = require('../../../config/api.js');
-var util = require('../../../utils/util.js');
-var user = require('../../../utils/user.js');
+import api from '../../../config/api.js';
+import util from '../../../../utils/util.js';
+import user from '../../../../utils/user.js';
 
 var app = getApp();
 Page({
@@ -25,6 +25,7 @@ Page({
 
   },
   wxLogin: function(e) {
+    
     if (e.detail.userInfo == undefined) {
       app.globalData.hasLogin = false;
       util.showErrorToast('微信登录失败');

@@ -1,11 +1,8 @@
-// pages/component/user/user.js
+// index.js
+// 获取应用实例
 const app = getApp()
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     motto: 'Hello DIO',
     userInfo: {},
@@ -16,17 +13,12 @@ Page({
     interval: 3000,
     duration: 800,
   },
-
-    // 事件处理函数
-    bindViewTap() {
-      wx.navigateTo({
-        url: '../logs/logs'
-      })
-    },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  // 事件处理函数
+  bindViewTap() {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
   onLoad() {
     if (app.globalData.userInfo) {
       this.setData({
@@ -55,8 +47,6 @@ Page({
       })
     }
   },
-
-    
   getUserInfo(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -64,80 +54,5 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  
-  getLogin() {
-    if (!app.globalData.isLogin) {
-      wx.navigateTo({
-        url: '/pages/component/auth/login'
-      });
-    }
-  },
-
-  exitLogin: function() {
-    wx.showModal({
-      title: '',
-      confirmColor: '#b4282d',
-      content: '退出登录？',
-      success: function(res) {
-        if (res.confirm) {
-          wx.removeStorageSync('token');
-          wx.removeStorageSync('userInfo');
-          wx.switchTab({
-            url: '/pages/index/index'
-          });
-        }
-      }
-    })
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })

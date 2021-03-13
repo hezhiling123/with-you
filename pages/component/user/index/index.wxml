@@ -1,20 +1,52 @@
-<!--pages/component/user/user.wxml-->
+<!--index.wxml-->
 <view class="container">
-  <view class="main">
-    <view class="user">
-      <view class="userInfo">
-        <image class="headImage" src="/images/head/head-image.png"></image>
-        <view class="userData">
-          <text class="userName">何知令</text>
-          <text class="userId">1000011</text>
-        </view>
-        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
-        </button>
-        <block wx:else>
-          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        </block>
+  <view class="userInfo">
+    <view class="userBasic">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
+      </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="vipCenter">
+      <image class="vipIcon" src="/images/icon/会员.png" />
+      <text id="becomeVipText">成为会员，全场享9折优惠！</text>
+      <text id="toRegister">立即注册</text>
+      <image id="toRegisterImage" src="/images/icon/arrow-right-white.png" />
+    </view>
+  </view>
+  <view id="userRouterList">
+    <view id="myOrder" class="common-router-block">
+      <view id="allOrder">
+        <text id="allOrder-text">我的订单</text>
+        <text id="allOrder-seeAll">查看全部订单</text>
+        <image class="common-right-arrow" src="/images/icon/arrow-right.png" />
       </view>
+      <view id="allOrder-divLine"></view>
+      <view class="serviceList">
+        <view class="serviceBlock">
+          <image class="serviceIcon" src="/images/icon/钱包.png" />
+          <text class="serviceDescribe">待付款</text>
+        </view>
+        <view class="serviceBlock">
+          <image class="serviceIcon" src="/images/icon/待发货.png" />
+          <text class="serviceDescribe">待发货</text>
+        </view>
+        <view class="serviceBlock">
+          <image class="serviceIcon" src="/images/icon/待收货.png" />
+          <text class="serviceDescribe">待收货</text>
+        </view>
+        <view class="serviceBlock">
+          <image class="serviceIcon" src="/images/icon/评价.png" />
+          <text class="serviceDescribe">待评价</text>
+        </view>
+        <view class="serviceBlock">
+          <image class="serviceIcon" src="/images/icon/退款.png" />
+          <text class="serviceDescribe">退款/售后</text>
+        </view>
+      </view>
+      <view class="common-router-block" id="goods-block"></view>
     </view>
   </view>
 </view>

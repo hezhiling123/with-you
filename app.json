@@ -4,7 +4,7 @@
     "pages/index/index",
     "pages/component/folder/folder",
     "pages/logs/logs",
-    "pages/component/user/index",
+    "pages/component/auth/login/login",
     "pages/component/user/center/center",
     "pages/component/user/index/index"
   ],
