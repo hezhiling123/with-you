@@ -2,10 +2,12 @@
 <view class="container">
   <view class="userInfo">
     <view class="userBasic">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称
-      </button>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <block wx:if="{{true}}" bindtap="goLogin">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"/>
+        <text class="userinfo-nickname" bindtap="goLogin">点我登录</text>
+      </block>
+      <block wx:else bindtap="goLogin">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"/>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
@@ -21,7 +23,7 @@
       <view id="allOrder">
         <text id="allOrder-text">我的订单</text>
         <text id="allOrder-seeAll">查看全部订单</text>
-        <image class="common-right-arrow" src="/images/icon/arrow-right.png" />
+        <image class="common-right-arrow" id ="see-order-arrow" src="/images/icon/arrow-right.png" />
       </view>
       <view id="allOrder-divLine"></view>
       <view class="serviceList">
@@ -46,7 +48,26 @@
           <text class="serviceDescribe">退款/售后</text>
         </view>
       </view>
-      <view class="common-router-block" id="goods-block"></view>
+    </view>
+    <view class="common-router-block" id="goods-block">
+      <view class="common-single-router">
+        <image class="common-router-icon" src="/images/icon/购物车.png"/>
+        <text class="common-router-text">购物车</text>
+        <image class="common-right-arrow" src="/images/icon/arrow-right.png"/>
+      </view>
+      <view class="common-router-div-line"></view>
+      <view class="common-single-router">
+        <image class="common-router-icon" src="/images/icon/收货地址.png"/>
+        <text class="common-router-text">收货地址</text>
+        <image class="common-right-arrow" src="/images/icon/arrow-right.png"/>
+      </view>
+    </view>
+    <view class="common-router-block">
+      <view class="common-single-router">
+        <image class="common-router-icon" src="/images/icon/个人设置.png"/>
+        <text class="common-router-text">个人设置</text>
+        <image class="common-right-arrow" src="/images/icon/arrow-right.png"/>
+      </view>
     </view>
   </view>
 </view>

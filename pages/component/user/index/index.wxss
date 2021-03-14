@@ -5,15 +5,14 @@
     padding-top: 70rpx;
     display: flex;
     flex-direction: column;
-    height: 300rpx;
+    height: 270rpx;
     width: 750rpx;
-    background-color: yellow;
+    background: url(https://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/couponHelp-4768607555.png);
 }
 
 .userBasic {
     height: 130rpx;
     width:  726rpx;
-    background-color: white;
     display: flex;
     flex-direction: row;
 }
@@ -29,12 +28,11 @@
     padding-top: 30rpx;
     height: 100rpx;
     width: 500rpx;
-    background-color: red;
     font: 50rpx bold;
 }
 
 .vipCenter {
-    margin-top: 90rpx;
+    margin-top: 60rpx;
     padding-top: 25rpx;
     padding-left: 20rpx;
     display: flex;
@@ -54,7 +52,7 @@
 
 #becomeVipText #toRegister{
     height: 30rpx;
-    font-size: 20rpx;
+    font-size: 18rpx;
     background-color: white;
 }
 
@@ -78,16 +76,6 @@
     height: 1000rpx;
     width: 750rpx;
     background-color: #f8f1f1;
-}
-
-.common-router-block {
-    margin-top: 15rpx;
-    height: 280rpx;
-    width: 700rpx;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 20rpx;
 }
 
 #myOrder {
@@ -120,19 +108,11 @@
     font-size: 27rpx;
 }
 
-.common-right-arrow {
-    margin-top: -10rpx;
-    margin-right: 40rpx;
-    display: right;
-    height: 60rpx;
-    width: 60rpx;
-}
-
 #allOrder-divLine {
     margin-left:40rpx;
     height: 2rpx;
     width: 620rpx;
-    background-color: #E0E3DA;
+    background-color: #f8f1f1;
 }
 
 .serviceList {
@@ -167,9 +147,60 @@
 }
 
 #goods-block {
-    margin-top: 100rpx;
-    height: 100rpx;
-    background-color: yellow;
+    height: 240rpx;
+}
+
+.common-router-block {
+    margin-top: 15rpx;
+    height: 110rpx;
+    width: 700rpx;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20rpx;
+}
+
+.common-single-router {
+    padding-top: 30rpx;
+    padding-left: 20rpx;
+    display: flex;
+    flex-direction: row;
+    height: 120rpx;
+    width: 680rpx;
+}
+
+.common-router-icon {
+    height: 70rpx;
+    width: 70rpx;
+}
+
+.common-router-text {
+    height: 70rpx;
+    margin-top:15rpx;
+    letter-spacing: 3rpx;
+    line-height: 30rpx;
+    padding-left: 30rpx;
+    font: 33rpx bold;
+    width: 540rpx;
+}
+
+.common-right-arrow {
+    float: right;
+    margin-top: 10rpx;
+    margin-right: 40rpx;
+    height: 60rpx;
+    width: 60rpx;
+}
+
+.common-router-div-line {
+    margin-left:40rpx;
+    height: 2rpx;
+    width: 660rpx;
+    background-color: #f8f1f1;
+}
+
+#see-order-arrow {
+    margin-top: -10rpx;
 }
 
 .user-motto {

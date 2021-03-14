@@ -49,6 +49,7 @@ function loginByWeixin(userInfo) {
   return new Promise(async function(resolve, reject) {
     try {
       const res = await login();
+      console.log("code:" + res.code);
       //登录远程服务器
       util.request(AuthLoginByWeixin, {
         code: res.code,

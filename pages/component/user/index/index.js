@@ -54,5 +54,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  goLogin(e) {
+    if (!app.globalData.hasLogin) {
+      console.log("aa");
+      wx.navigateTo({
+        url: "/pages/component/auth/login/login"
+      });
+    }
   }
 })
