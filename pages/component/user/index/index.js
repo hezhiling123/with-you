@@ -2,6 +2,10 @@
 // 获取应用实例
 const app = getApp()
 
+import api from '../../../config/api.js';
+import util from '../../../../utils/util.js';
+import user from '../../../../utils/user.js';
+
 Page({
   data: {
     motto: 'Hello DIO',
@@ -48,7 +52,8 @@ Page({
     }
   },
   getUserInfo(e) {
-    console.log(e)
+    console.log(e);
+    console.log("BBB");
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -57,10 +62,25 @@ Page({
   },
   goLogin(e) {
     if (!app.globalData.hasLogin) {
-      console.log("aa");
-      wx.navigateTo({
-        url: "/pages/component/auth/login/login"
+    if (e.detail.userInfo == undefined) {
+      app.globalData.hasLogin = false;
+      util.showErrorToast('微信登录失败');
+      return;
+    }
+
+    user.checkLogin().catch(() => {
+
+      user.loginByWeixin(e.detail.userInfo).then(res => {
+        app.globalData.hasLogin = true;
+        wx.navigateBack({
+          delta: 1
+        })
+      }).catch((err) => {
+        app.globalData.hasLogin = false;
+        util.showErrorToast('微信登录失败');
       });
+
+    });
     }
   }
 })

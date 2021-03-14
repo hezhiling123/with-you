@@ -2,9 +2,9 @@
 <view class="container">
   <view class="userInfo">
     <view class="userBasic">
-      <block wx:if="{{true}}" bindtap="goLogin">
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"/>
-        <text class="userinfo-nickname" bindtap="goLogin">点我登录</text>
+      <block wx:if="{{true}}">
+        <image class="userinfo-avatar" src="/images/icon/头像.png"/>
+        <text class="userinfo-nickname"bindtap="goLogin">点我登录</text>
       </block>
       <block wx:else bindtap="goLogin">
         <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"/>
