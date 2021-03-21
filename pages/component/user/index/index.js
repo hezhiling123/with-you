@@ -1,10 +1,11 @@
 // index.js
 // 获取应用实例
-const app = getApp()
-
-import api from '../../../config/api.js';
-import util from '../../../../utils/util.js';
-import user from '../../../../utils/user.js';
+const app = getApp();
+var api = require('../../../config/api.js');
+var util = require('../../../../utils/util.js').default;
+import { TEST } from '../../../config/api.js';
+import { request, showErrorToast } from '../../../../utils/util.js';
+import { checkLogin, loginByWeixin } from '../../../../utils//user.js';
 
 Page({
   data: {
@@ -61,26 +62,22 @@ Page({
     })
   },
   goLogin(e) {
-    if (!app.globalData.hasLogin) {
-    if (e.detail.userInfo == undefined) {
-      app.globalData.hasLogin = false;
-      util.showErrorToast('微信登录失败');
-      return;
-    }
+    wx.navigateTo({
+      url: '../../auth/login/login',
+    })
+  
+    checkLogin().catch(() => {
 
-    user.checkLogin().catch(() => {
-
-      user.loginByWeixin(e.detail.userInfo).then(res => {
+      loginByWeixin(e.detail.userInfo).then(res => {
         app.globalData.hasLogin = true;
         wx.navigateBack({
           delta: 1
         })
       }).catch((err) => {
         app.globalData.hasLogin = false;
-        util.showErrorToast('微信登录失败');
+        showErrorToast('微信登录失败');
       });
 
     });
     }
-  }
 })

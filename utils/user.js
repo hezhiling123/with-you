@@ -45,21 +45,26 @@ function login() {
  * 调用微信登录
  */
 function loginByWeixin(userInfo) {
+  console.log("登录测试");
 
   return new Promise(async function(resolve, reject) {
     try {
-      const res = await login();
-      console.log("code:" + res.code);
+      // const res = await login();
+      // console.log(res);
+      // console.log(code);
+      console.log(userInfo);
       //登录远程服务器
-      util.request(AuthLoginByWeixin, {
-        code: res.code,
+      util.request(LOGIN_BY_WEIXIN, {
+        // code: res.code,
+        code: "aaa",
         userInfo: userInfo
       }, 'POST').then(res_1 => {
+        console.log(code);
+        console.log(userInfo);
         if (res_1.errno === 0) {
           //存储用户信息
           wx.setStorageSync('userInfo', res_1.data.userInfo);
           wx.setStorageSync('token', res_1.data.token);
-
           resolve(res_1);
         } else {
           reject(res_1);
