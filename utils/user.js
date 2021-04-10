@@ -2,7 +2,7 @@
  * 用户相关服务
  */
 import util from './util.js';
-import { AuthLoginByWeixin } from '../pages/config/api.js';
+import { AuthLoginByWeixin, LOGIN_BY_WEIXIN } from '../pages/config/api.js';
 
 
 /**
@@ -49,14 +49,14 @@ function loginByWeixin(userInfo) {
 
   return new Promise(async function(resolve, reject) {
     try {
-      // const res = await login();
-      // console.log(res);
-      // console.log(code);
-      console.log(userInfo);
+      const res = await login();
+      console.log(res);
+      console.log("code:" + res.code);
+      console.log("userInfo: " + userInfo);
+      console.log("url: " + LOGIN_BY_WEIXIN);
       //登录远程服务器
       util.request(LOGIN_BY_WEIXIN, {
-        // code: res.code,
-        code: "aaa",
+        code: res.code,
         userInfo: userInfo
       }, 'POST').then(res_1 => {
         console.log(code);

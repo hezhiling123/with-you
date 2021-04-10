@@ -26,15 +26,17 @@ Page({
   },
   wxLogin: function(e) {
 
+    console.log("start login");
     console.log(e);
-    // if (e.detail.userInfo == undefined) {
-    //   app.globalData.hasLogin = false;
-    //   util.showErrorToast('微信登录失败');
-    //   return;
-    // }
+    if (e.detail.userInfo == undefined) {
+      app.globalData.hasLogin = false;
+      util.showErrorToast('微信登录失败');
+      return;
+    }
 
     
     user.loginByWeixin(e.detail.userInfo).then(res => {
+      console.log("开始调用后端登录接口");
       app.globalData.hasLogin = true;
 
       wx.navigateBack({
