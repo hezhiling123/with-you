@@ -1,2 +1,11 @@
-<!--pages/component/main/main.wxml-->
-<text>pages/component/main/main.wxml</text>
+<view class="container">
+  <view class="categoryList">
+    <text class="category">钥匙标</text>
+    <image class="categoryDivLine" src="/images/icon/竖线.png"/>
+    <text class="category">移车标</text>
+    <image class="categoryDivLine" src="/images/icon/竖线.png"/>
+    <text class="category">钱包信息标</text>
+    <image class="categoryDivLine" src="/images/icon/竖线.png"/>
+    <text class="category">背包信息标</text>
+  </view>
+</view>
