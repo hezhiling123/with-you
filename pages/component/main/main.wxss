@@ -1,2 +1,63 @@
 /* pages/component/main/main.wxss */
 @import '../../common/common.wxss';
+.container {
+  padding-left: 0rpx;
+}
+
+#category-list {
+  display: flex;
+  flex-flow: row;
+  width: 750rpx;
+  height: 60rpx;
+  padding-left: 35rpx;
+  padding-top:10rpx;
+}
+
+.category-block {
+  display: flex;
+  flex-flow: row;
+  width: 180rpx;
+  height: 50rpx;
+  padding-top:7rpx;
+}
+
+.category {
+  width: 150rpx;
+  height: 50rpx;
+  text-align: center;
+  font-size: 25rpx;
+}
+
+.category-div-line {
+  height: 25rpx;
+  width: 20rpx;
+  margin-top: 7rpx;
+}
+
+.banner-list {
+  position: relative;
+  height: 350rpx;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.recommend-goods-category-list {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
+
+.recommend-img {
+  height: 250rpx;
+  width: 100%;
+}

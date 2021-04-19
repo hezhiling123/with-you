@@ -1,11 +1,38 @@
 <view class="container">
-  <view class="categoryList">
-    <text class="category">钥匙标</text>
-    <image class="categoryDivLine" src="/images/icon/竖线.png"/>
-    <text class="category">移车标</text>
-    <image class="categoryDivLine" src="/images/icon/竖线.png"/>
-    <text class="category">钱包信息标</text>
-    <image class="categoryDivLine" src="/images/icon/竖线.png"/>
-    <text class="category">背包信息标</text>
+  <view id="category-list">
+    <view class="category-block">
+      <text class="category">钥匙标</text>
+      <image class="category-div-line" src="/images/icon/竖线.png" />
+    </view>
+    <view class="category-block">
+      <text class="category">移车标</text>
+      <image class="category-div-line" src="/images/icon/竖线.png" />
+    </view>
+    <view class="category-block">
+      <text class="category">钱包标</text>
+      <image class="category-div-line" src="/images/icon/竖线.png" />
+    </view>
+    <view class="category-block">
+      <text class="category">背包标</text>
+    </view>
+  </view>
+  <view class="banner-list">
+    <swiper indicator-dots="{{ indicatorDots }}" autoplay="{{ autoPlay }}" interval="{{ interval }}" duration="{{ duration }}" >
+      <block wx:for="{{ bannerImgList }}" wx:key="*this">
+        <swiper-item>
+          <image lazy-load="{{ true }}" class="banner-img" src="{{ item }}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="recommend-goods-category-list">
+    <block wx:for="{{ recommendGoodsCategoryList }}" wx:key="*this" wx:for-item="recommendGoods">
+      <image lazy-load="{{ true }}" src="{{ recommendGoods.recommendImgUrl }}" class="recommend-img"/>
+      <block wx:for="{{ recommendGoods.recommendGoodsList }}" wx:key="*this" wx:for-item="goods">
+        <image lazy-load="{{ true }}" src="{{ goods.goodsImgUrl }}"/>
+      </block>
+    </block>
+  </view>
+  <view class="programmer-data">
   </view>
 </view>

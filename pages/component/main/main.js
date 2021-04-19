@@ -1,11 +1,45 @@
 // pages/component/main/main.js
 Page({
 
+  onShareAppMessage() {
+    return {
+      title: '主页',
+      path: '/pages/component/main/main'
+    }
+  },
   /**
    * 页面的初始数据
    */
   data: {
-
+    bannerImgList: ['/images/head/head-image.png', '/images/head/head-image.png'],
+    indicatorDots: true,
+    vertical: false,
+    autoPlay: true,
+    interval: 6000,
+    duration: 1500,
+    recommendGoodsCategoryList: [{
+        "recommendImgUrl": "/images/head/head-image.png",
+        "recommendGoodsList": [{
+          "goodsId": "111111",
+          "goodsName": "kkk",
+          "goodsImgUrl": "/images/head/head-image.png"
+        }]
+      },
+      {
+        "recommendImgUrl": '/images/head/head-image.png',
+        "recommendGoodsList": [{
+            "goodsId": "111111",
+            "goodsName": "kkk",
+            "goodsImgUrl": "/images/head/head-image.png"
+          },
+          {
+            "goodsId": "33333",
+            "goodsName": "aaa",
+            "goodsImgUrl": "/images/head/head-image.png"
+          }
+        ]
+      }
+    ]
   },
 
   /**
