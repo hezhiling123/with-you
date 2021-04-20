@@ -82,7 +82,9 @@ function loginByWeixin(userInfo) {
  * 判断用户是否登录
  */
 function checkLogin() {
+  console.log("checkLogin1:");
   return new Promise(function(resolve, reject) {
+    console.log("checkLogin:");
     if (wx.getStorageSync('userInfo') && wx.getStorageSync('token')) {
       checkSession().then(() => {
         resolve(true);

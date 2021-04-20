@@ -1,30 +1,28 @@
 import api from '../../../config/api.js';
 import util from '../../../../utils/util.js';
 import user from '../../../../utils/user.js';
-
 var app = getApp();
 Page({
-  data: {},
-  onLoad: function(options) {
+  onLoad: function () {
     // 页面初始化 options为页面跳转所带来的参数
     // 页面渲染完成
 
   },
-  onReady: function() {
+  onReady: function () {
 
   },
-  onShow: function() {
+  onShow: function () {
     // 页面显示
   },
-  onHide: function() {
+  onHide: function () {
     // 页面隐藏
 
   },
-  onUnload: function() {
+  onUnload: function () {
     // 页面关闭
 
   },
-  wxLogin: function(e) {
+  wxLogin: function (e) {
 
     console.log("start login");
     console.log(e);
@@ -33,32 +31,22 @@ Page({
       util.showErrorToast('微信登录失败');
       return;
     }
-
-    
-    user.loginByWeixin(e.detail.userInfo).then(res => {
-      console.log("开始调用后端登录接口");
-      app.globalData.hasLogin = true;
-
-      wx.navigateBack({
-        delta: 1
-      })
-    }).catch((err) => {
-      app.globalData.hasLogin = false;
-      util.showErrorToast('微信登录失败');
-    });
     user.checkLogin().catch(() => {
-
-      user.loginByWeixin(e.detail.userInfo).then(res => {
+      user.loginByWeixin(e.detail.userInfo).then(() => {
+        console.log("hasLogin:" + app.globalData.hasLogin);
         app.globalData.hasLogin = true;
-
         wx.navigateBack({
           delta: 1
         })
-      }).catch((err) => {
+      }).catch(() => {
         app.globalData.hasLogin = false;
         util.showErrorToast('微信登录失败');
       });
-
+    });
+  },
+  accountLogin: function () {
+    wx.navigateTo({
+      url: "/pages/auth/accountLogin/accountLogin"
     });
   }
 })
